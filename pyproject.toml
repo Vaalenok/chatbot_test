@@ -1,0 +1,18 @@
+[project]
+name = "chatbot-test"
+version = "1"
+description = "Тестовое задание"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiogram>=3.22.0",
+    "asyncpg>=0.30.0",
+    "black>=25.11.0",
+    "colorlog>=6.10.1",
+    "environs>=14.5.0",
+    "flake8>=7.3.0",
+    "logging>=0.4.9.6",
+    "openai>=2.8.1",
+    "sqlalchemy>=2.0.44",
+    "tiktoken>=0.12.0",
+]

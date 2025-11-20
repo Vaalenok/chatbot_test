@@ -1,0 +1,2 @@
+### Поднять базу данных локально
+``docker run --name <название контейнера> -e POSTGRES_USER=<имя пользователя бд> -e POSTGRES_PASSWORD=<пароль пользователя бд> -e POSTGRES_DB=<название бд> -p 5432:5432 -d postgres:latest``
