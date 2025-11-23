@@ -1,6 +1,7 @@
 from openai import OpenAI
 from src.config import OPENAI_API_KEY, MODEL_NAME, MAX_TOKENS
-import tiktoken
+from src.functions import count_tokens
+
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -15,9 +16,3 @@ def get_response(messages: list[dict]) -> tuple[str, int]:
     response = client.responses.create(model=MODEL_NAME, input=messages)
 
     return response.output_text, sliced
-
-
-def count_tokens(messages: list[dict]) -> int:
-    encoding = tiktoken.encoding_for_model(MODEL_NAME)
-    num_tokens = len(encoding.encode("".join([msg["content"] for msg in messages])))
-    return num_tokens
